@@ -12,9 +12,31 @@ This project demonstrates how security events can be:
 
 ---
 
+## How to Run
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/roman-gofer/security-automation-loop.git
+cd security-automation-loop
+
+<!-- 2. (Optional) Create a virtual environment
+
+python -m venv venv
+
+Activate it:
+
+Mac/Linux
+source venv/bin/activate
+
+Windows
+venv\Scripts\activate
+
+3. Run the program
+python main.py -->
+
 ## Architecture Overview
 
-```text
+```plaintext
         ┌────────────────────┐
         │ 1. Event Detection │
         │ generate_event()   │
