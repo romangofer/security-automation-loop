@@ -1,22 +1,63 @@
-# Security Automation Loop Simulator
+# Security Automation Pipeline (Python)
 
-## Overview
-This project simulates a security compliance automation system that demonstrates how modern security teams can move from manual reviews to fully automated detection, remediation, and verification loops.
+A lightweight simulation of an end-to-end security/compliance automation system.
 
-## Architecture
-The system follows a closed-loop model:
+This project demonstrates how security events can be:
+- Detected
+- Enriched with context
+- Classified by risk
+- Explained using AI-style summarization
+- Automatically remediated
+- Verified for resolution
 
-1. Event Generation
-2. Enrichment
-3. Risk Classification
-4. Automated Remediation
-5. Verification / Re-scan
+---
 
-## Technologies
-- Python
-- Event-driven design concepts
-- Simulated cloud security workflows (inspired by AWS / Kubernetes environments)
+## Architecture Overview
 
-## How to Run
-```bash
-python main.py
+```text
+        ┌────────────────────┐
+        │ 1. Event Detection │
+        │ generate_event()   │
+        └─────────┬──────────┘
+                  │
+                  ▼
+        ┌────────────────────┐
+        │ 2. Enrichment      │
+        │ enrich()           │
+        │ (adds context)     │
+        └─────────┬──────────┘
+                  │
+                  ▼
+        ┌────────────────────┐
+        │ 3. Classification  │
+        │ classify()         │
+        │ (HIGH/MED/LOW)     │
+        └─────────┬──────────┘
+                  │
+                  ▼
+        ┌────────────────────┐
+        │ 4. AI Summary      │
+        │ llm_summarize()    │
+        │ (human-readable)   │
+        └─────────┬──────────┘
+                  │
+                  ▼
+        ┌────────────────────┐
+        │ 5. Remediation     │
+        │ remediate()        │
+        │ (fix / ticket / log)
+        └─────────┬──────────┘
+                  │
+                  ▼
+        ┌────────────────────┐
+        │ 6. Verification    │
+        │ verify()           │
+        │ (re-scan check)    │
+        └─────────┬──────────┘
+                  │
+                  ▼
+        ┌────────────────────┐
+        │ 7. State Tracking  │
+        │ STATE[]            │
+        │ (history/logging)  │
+        └────────────────────┘
